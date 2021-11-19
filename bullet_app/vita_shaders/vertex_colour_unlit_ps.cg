@@ -1,0 +1,6 @@
+float4 main(
+	float4 input_position : POSITION,
+	float4 input_colour : COLOR0)
+{
+	return input_colour;
+}
