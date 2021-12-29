@@ -1,0 +1,6 @@
+/PSVita/
+/Win32/
+/x64/
+*.VC.db
+*.VC.VC.opendb
+/.vs/

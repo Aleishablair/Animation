@@ -1,0 +1,16 @@
+#include <platform/vita/system/platform_vita.h>
+#include "animated_mesh_app.h"
+
+unsigned int sceLibcHeapSize = 128*1024*1024;	// Sets up the heap area size as 128MiB.
+
+int main(void)
+{
+	// initialisation
+	gef::PlatformVita platform;
+
+	AnimatedMeshApp myApp(platform);
+	myApp.set_ndc_zmin(-1.0f);
+	myApp.Run();
+
+	return 0;
+}

@@ -1,0 +1,16 @@
+
+
+
+void main(
+	float3 position : POSITION,
+	float4 colour : COLOR,
+	uniform float4x4 wvp,
+	uniform float4x4 world,
+	float4 out output_position : POSITION,
+	float4 out output_colour : COLOR0
+	)
+{
+	float4 position_vec = float4(position, 1);
+	output_position = mul(position_vec, wvp);
+	output_colour = colour;
+}
