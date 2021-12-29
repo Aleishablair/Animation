@@ -167,7 +167,16 @@ bool AnimatedMeshApp::Update(float frame_time)
 			bone_indices.push_back(17); // left elbow
 			bone_indices.push_back(18); // left wrist
 
-			CalculateCCD(ik_pose_, *player_, effector_position_, bone_indices);
+			std::vector<std::pair<float, float>> constraints;
+			constraints.push_back(std::pair<float, float>(0.0f, gef::DegToRad(360.0f)));
+			constraints.push_back(std::pair<float, float>(0.0f, gef::DegToRad(360.0f)));
+			constraints.push_back(std::pair<float, float>(0.0f, gef::DegToRad(360.0f)));
+
+			std::vector<int> priority_bones;
+			priority_bones.push_back(0);
+			priority_bones.push_back(1);
+
+			CalculateCCD(ik_pose_, *player_, effector_position_, bone_indices, constraints, priority_bones);
 
 			player_->UpdateBoneMatrices(ik_pose_);
 		}

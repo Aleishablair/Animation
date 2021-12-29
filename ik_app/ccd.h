@@ -7,6 +7,8 @@ bool CalculateCCD(
 	gef::SkeletonPose& pose,
 	const gef::SkinnedMeshInstance& animatedModel,
 	const gef::Vector4& destPoint,
-	const std::vector<int>& boneIndices);
+	const std::vector<int>& boneIndices,
+	std::vector<std::pair<float, float>> constraints,
+	std::vector<int> priority_bones);
 
 #endif // !_CCD_H
